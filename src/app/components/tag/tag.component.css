@@ -1,0 +1,25 @@
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    max-width: 250px; /* Ajuste o tamanho da imagem do logo */
+    margin-bottom: 15px; /* Espaço abaixo do logo */
+}
+
+.tags-container ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    display: flex; /* Usado para centralizar os itens */
+    flex-direction: column; /* Coloca os itens da lista em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.tags-container li {
+    margin: 10px 0; /* Espaçamento vertical entre as tags */
+}
