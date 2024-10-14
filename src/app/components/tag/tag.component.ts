@@ -20,31 +20,33 @@ import { TagDTO } from 'src/app/dto/tag.dto';
   ]
 })
 export class TagComponent {
-  public loading = false;
-  public tagsVisible = false;
   public tags: string[] = [];
 
-  constructor(
-    private dataService: DataService,
-  ) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.fetchTags();
   }
 
   private fetchTags() {
-    this.loading = true;
+
+    let tagSession = sessionStorage.getItem('tagSession');
+    if (tagSession) {
+      this.tags = JSON.parse(tagSession);
+      return;
+    }
+
     this.dataService.fetchTags().subscribe({
       next: (result: TagDTO) => {
         this.tags = result.data;
-        this.tagsVisible = true;
+        
+        // Armazena a lista de tags no sessionStorage
+        sessionStorage.setItem('tagSession', JSON.stringify(this.tags));
       },
       error: (error) => {
         console.log('ERRO', error);
-        this.loading = false;
       },
       complete: () => {
-        this.loading = false;
       }
     });
   }

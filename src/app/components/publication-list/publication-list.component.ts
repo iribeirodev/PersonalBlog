@@ -12,6 +12,7 @@ export class PublicationListComponent {
   public publicacoes: ItemPublicacao[] = [];
 
   tag_criteria: string = '';
+  tp_publicacao_criteria: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -19,18 +20,34 @@ export class PublicationListComponent {
 
   ngOnInit() {
     this.tag_criteria = this.route.snapshot.paramMap.get('tag') || '';
-    console.log('tag pesquisada', this.tag_criteria);
-
+    this.tp_publicacao_criteria = this.route.snapshot.paramMap.get('tipopublicacao') || '';
+    
     if (this.tag_criteria) {
       this.fetchPublicacoesByTag();
       return;
-    } 
+    } else if (this.tp_publicacao_criteria) {
+      this.fetchPublicacoesByTipo();
+      return;
+    }
 
     this.fetchPublicacoes();
   }
 
   fetchPublicacoesByTag() {
     this.dataService.fetchPublicationsByTag(this.tag_criteria).subscribe({
+      next: (result: PublicacaoDTO) => {
+        this.publicacoes = result.data;
+      },
+      error: (error) => {
+        console.log('ERRO', error);
+      },
+      complete: () => {
+      }
+    });       
+  }
+
+  fetchPublicacoesByTipo() {
+    this.dataService.fetchPublicationsByTipo(this.tp_publicacao_criteria).subscribe({
       next: (result: PublicacaoDTO) => {
         this.publicacoes = result.data;
       },

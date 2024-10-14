@@ -1,7 +1,30 @@
 ul {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.titulo-artigo {
+    font-family: 'RobotoCustom', Helvetica, sans-serif;
+    font-size: 36px;
+}
+
+.tags-artigo {
+    color: #41c227;   
+    padding-left: 1em; 
 }
 
 a {
     text-decoration: none;
+    color: #000;
+}
+a:hover{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+li {
+    padding-top: 1.5em;
 }

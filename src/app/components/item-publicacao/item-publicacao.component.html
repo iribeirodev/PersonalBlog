@@ -1,7 +1,11 @@
 <div>
-    <div class="row">
-        <h3>{{currentPublicacao?.titulo}}</h3>
+    <div class="row" style="margin-top: 2.5em;">
+        <h3 class="titulo-artigo">{{currentPublicacao?.titulo}}</h3>
     </div>
-    <markdown [data]="currentPublicacao?.texto"></markdown>
+    <div class="row">
+        <div class="col texto-artigo">
+            <markdown [data]="currentPublicacao?.texto"></markdown>
+        </div>
+    </div>
 </div>
 

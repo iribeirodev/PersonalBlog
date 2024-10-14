@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: PublicationListComponent },
   { path: 'publicacoes/:url', component: ItemPublicacaoComponent },
   { path: 'publicacoes/tags/:tag', component: PublicationListComponent },
+  { path: 'publicacoes/tipopublicacao/:tipopublicacao', component: PublicationListComponent },
 ];
 
 @NgModule({

@@ -9,7 +9,8 @@ import { PublicacaoDTO } from '../dto/publicacao.dto';
 })
 export class DataService {
 
-  private baseURL = 'https://iribeiroblog.koyeb.app/api'
+  //private baseURL = 'https://iribeiroblog.koyeb.app/api';
+  private baseURL = 'http://localhost:5007/api';
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +34,12 @@ export class DataService {
 
   fetchPublicationsByTag(p_tag: string) {
     const url: string = `${this.baseURL}/publicacoes/getbytag/${p_tag}`;
+
+    return this.http.get<any>(url);
+  }
+
+  fetchPublicationsByTipo(p_tipo: string) {
+    const url: string = `${this.baseURL}/publicacoes/getbytype/${p_tipo}`;
 
     return this.http.get<any>(url);
   }

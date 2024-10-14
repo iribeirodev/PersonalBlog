@@ -4,6 +4,7 @@ export interface ItemPublicacao {
     url: string;
     tipoPublicacao: string;
     tags: string;
+    tempoPublicadoEmDias: number;
     dataPublicacao: string;
     dataRevisao: string;
 }

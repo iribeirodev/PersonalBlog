@@ -1,8 +1,5 @@
-<div *ngIf="!loading" @fade class="tags-container">
-    <ul>
-        <a href="#">
-            <img class="logo" src="/assets/img/logo.png" alt="logo" />
-        </a>
+<div class="barra">
+    <ul class="menu-items">
         <li *ngFor="let tag of tags">
             <a href="publicacoes/tags/{{tag}}">{{tag}}</a>
         </li>
