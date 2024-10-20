@@ -1,12 +1,18 @@
-<div>
-    <ul *ngIf="publicacoes.length > 0">
-        <li *ngFor="let p of publicacoes">
-            <h3><a class="titulo-artigo" href="publicacoes/{{p.url}}">{{p.titulo}}</a></h3>
-            <h6>
-                Na seção <a href="publicacoes/tipopublicacao/{{p.tipoPublicacao}}">{{p.tipoPublicacao}}</a> há
-                {{p.tempoPublicadoEmDias}} dias atrás.
-                <span class="tags-artigo">{{p.tags}}</span>
-            </h6>
-        </li>
-    </ul>
+<div *ngIf="publicacoes.length > 0">
+    <div *ngFor="let p of publicacoes">
+        <div class="row">
+            <div class="col"><a href="publicacoes/{{p.url}}" class="titulo-artigo">{{p.titulo}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><p class="detalhe-artigo">{{p.detalhe}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"><p class="tags-artigo">{{p.tags}}</p>
+            </div>
+        </div>
+    </div>
+
+
 </div>

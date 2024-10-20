@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TagDTO } from '../dto/tag.dto';
 import { PublicacaoDTO } from '../dto/publicacao.dto';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  //private baseURL = 'https://iribeiroblog.koyeb.app/api';
-  private baseURL = 'http://localhost:5007/api';
+  private baseURL = environment.BaseURL; //'http://localhost:5007/api';
 
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,7 @@
 export interface ItemPublicacao {
     id: number;
     titulo: string;
+    detalhe: string;
     url: string;
     tipoPublicacao: string;
     tags: string;

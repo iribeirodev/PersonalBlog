@@ -13,6 +13,7 @@ export class PublicationListComponent {
 
   tag_criteria: string = '';
   tp_publicacao_criteria: string = '';
+  detalhe_artigo: string = '';
 
   constructor(
     private route: ActivatedRoute,
