@@ -12,9 +12,7 @@ export class DataService {
 
   private baseURL = BlogConfig.API_PATH;
 
-  constructor(private http: HttpClient) { 
-    console.log('API_PATH', BlogConfig.API_PATH);
-  }
+  constructor(private http: HttpClient) { }
 
   fetchTags(): Observable<TagDTO> {
     const url: string = `${this.baseURL}/tags`;
