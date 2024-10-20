@@ -3,16 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TagDTO } from '../dto/tag.dto';
 import { PublicacaoDTO } from '../dto/publicacao.dto';
-import { environment } from '../../environments/environment';
+import { BlogConfig } from 'config/blog_config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private baseURL = environment.BaseURL; //'http://localhost:5007/api';
+  private baseURL = BlogConfig.API_PATH;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    console.log('API_PATH', BlogConfig.API_PATH);
+  }
 
   fetchTags(): Observable<TagDTO> {
     const url: string = `${this.baseURL}/tags`;
