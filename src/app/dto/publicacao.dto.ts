@@ -4,10 +4,11 @@ export interface ItemPublicacao {
     detalhe: string;
     url: string;
     tipoPublicacao: string;
-    tags: string;
+    tags: string[];
     tempoPublicadoEmDias: number;
     dataPublicacao: string;
     dataRevisao: string;
+    imageLink: string;
 }
 
 export interface PublicacaoDTO {

@@ -15,31 +15,31 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   fetchTags(): Observable<TagDTO> {
-    const url: string = `${this.baseURL}/tags`;
+    const url: string = `${this.baseURL}/tags/current`;
 
     return this.http.get<TagDTO>(url);
   }
 
   fetchCurrentPublications(): Observable<PublicacaoDTO> {
-    const url: string = `${this.baseURL}/publicacoes/getcurrent`;
+    const url: string = `${this.baseURL}/publicacoes/current`;
 
     return this.http.get<PublicacaoDTO>(url);
   }
 
   fetchPublicationByURL(p_url: string) {
-    const url: string = `${this.baseURL}/publicacoes/getbyurl/${p_url}`;
+    const url: string = `${this.baseURL}/publicacoes/byurl/${p_url}`;
 
     return this.http.get<any>(url);
   }
 
   fetchPublicationsByTag(p_tag: string) {
-    const url: string = `${this.baseURL}/publicacoes/getbytag/${p_tag}`;
+    const url: string = `${this.baseURL}/publicacoes/bytag/${p_tag}`;
 
     return this.http.get<any>(url);
   }
 
   fetchPublicationsByTipo(p_tipo: string) {
-    const url: string = `${this.baseURL}/publicacoes/getbytype/${p_tipo}`;
+    const url: string = `${this.baseURL}/publicacoes/bytype/${p_tipo}`;
 
     return this.http.get<any>(url);
   }
